@@ -5,7 +5,7 @@
     width="360"
   />
   
-  <h3>智能菜谱客服 · 增强版</h3>
+  <h3>智能菜谱客服</h3>
   <p>基于 Multi-Agent 架构的菜谱知识问答与多模态服务系统</p>
 
   ![Python](https://img.shields.io/badge/Python-3.10-blue?style=flat&logo=python)
@@ -20,7 +20,7 @@
   ![License](https://img.shields.io/badge/License-Apache%202.0-yellow.svg?style=flat)
 </div>
 
-> **🏷️ 本项目说明**：本仓库是 [skygazer42/GustoBot](https://github.com/skygazer42/GustoBot)（Apache-2.0）的**增强版（Enhanced Edition）**，在保留原三层 Multi-Agent 架构的基础上，完成了 P0 安全加固与工程化修正。详情见 [增强版改动清单](#-增强版改动清单)。
+
 
 ## 项目简介
 
