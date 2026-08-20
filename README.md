@@ -168,6 +168,4 @@ GustoBot/
 - `docs/TEXT2SQL_IMPLEMENTATION.md` — Text2SQL LangGraph 化实现
 
 
-## License
 
-[Apache License 2.0](LICENSE) — 本增强版基于 [skygazer42/GustoBot](https://github.com/skygazer42/GustoBot)，保留上游版权声明。
