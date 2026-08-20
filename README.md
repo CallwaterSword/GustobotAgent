@@ -137,28 +137,10 @@ npm run dev    # http://localhost:5173
 | `GUSTOBOT_MEMORY_TURNS` | 记忆轮数 | 5 |
 | `CORS_ORIGINS` | 前端跨域白名单 | http://localhost:5173 |
 
-## 🔒 增强版改动清单
 
-本仓库在保留上游全部功能的基础上，完成以下改进（2026-08-20）：
-
-### P0 安全加固
-
-1. **Text2Cypher 标签/关系白名单校验**（`validation/validators.py`）：新增 `validate_labels_and_types_in_cypher_query`，阻止 LLM 生成的 Cypher 引用 schema 之外的未知/恶意标签，堵住注入面
-2. **Neo4j 认证启用**（`docker-compose.yml`）：`NEO4J_AUTH: none` → `${NEO4J_USER:-neo4j}/${NEO4J_PASSWORD:-recipepass}`
-3. **敏感文件移除 git 跟踪**：`uploads/密码(1).txt`、`data/lightrag/`、`data/tiktoken_cache/`、`neo4j_plugins/*.jar` 等 18 个运行时/凭据文件已 `git rm --cached`，并补齐 `.gitignore` 规则
-4. **CORS 白名单化**（`main.py` + `settings.py`）：`allow_origins=["*"]` → `settings.cors_origins_list` 可配置
-5. **默认模型修正**：`LLM_MODEL` 默认改为 `qwen3-max`
-
-### 稳定性修复
-
-6. **修复子图节点未注册 bug**（`multi_tool.py`）：补注册 `error_tool_selection` 节点，消除 `tool_selection` 路由到未注册节点的运行时崩溃
-7. **修复 19 处 loguru f-string 占位符 bug**：异常消息含 `{'error'}` 花括号与 loguru 格式化冲突导致 KeyError 掩盖真实错误，修复后错误信息正常透传
-
-### 文档修正（与上游 README 偏差）
-
-8. 前端技术栈：~~React 18~~ → **Vue3 + Vite + TypeScript**
-9. Checkpointer：~~Redis Checkpointer~~ → **MemorySaver**（进程内存，Redis 仅做语义缓存）
-10. Neo4j 版本：~~4.4~~ → **5.27**
+前端技术栈：Vue3 + Vite + TypeScript
+Checkpointer：  MemorySaver（进程内存，Redis 仅做语义缓存）
+Neo4j 版本： 5.27
 
 > 📋 完整问题清单（30 项，P0-P3 分级）见 `docs/CODE_REVIEW.md`（个人代码评审报告）。
 
@@ -183,9 +165,8 @@ GustoBot/
 
 - `docs/DEPLOYMENT.md` — 部署指南
 - `docs/QUICK_START.md` — 快速开始
-- `docs/ROUTER_PROMPT_FIX.md` — 路由提示词 P0 修复记录
 - `docs/TEXT2SQL_IMPLEMENTATION.md` — Text2SQL LangGraph 化实现
-- `docs/CODE_REVIEW.md` — 代码评审报告（30 项问题与改进路线图）
+
 
 ## License
 
