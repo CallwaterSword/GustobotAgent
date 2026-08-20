@@ -1,7 +1,7 @@
 [project]
 name = "gustobot"
 version = "0.2.0"
-description = "智能菜谱客服系统 - Multi-Agent架构（基于 skygazer42/GustoBot 的增强版）"
+description = "智能菜谱客服系统 - Multi-Agent架构"
 authors = [
     {name = "Wei Rongji", email = "CallwaterSword@users.noreply.github.com"}
 ]
